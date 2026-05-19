@@ -29,6 +29,27 @@ If the user asks to insert an image (e.g., UI of a game, or script flow), you mu
 - Captions must be placed _below_ the image.
 - Caption format: "Gambar X.Y Nama Gambar".
 
+### Mandatory Cover Logos (DO NOT REMOVE)
+
+For the cover page, these logo rules are strict and must always be preserved unless the user explicitly requests a different official format:
+
+- `media/logo-pens.png` MUST be rendered on the cover and must never be commented out or removed.
+- For the official first-page style that follows `Contoh_Laporan_KP.pdf`, use the PENS logo on the top-left header area.
+- `media/lentera_nusantara_logo.png` is optional and may be used only when the user explicitly requests dual-logo cover composition.
+- If future code generation touches cover layout, preserve visible logo rendering and do not silently remove the PENS logo.
+
+### Mandatory Font Hierarchy for Cover & Lembar Pengesahan
+
+When generating/changing `template.typ`, use this hierarchy based on official references:
+
+- **Cover title block** (`LAPORAN KERJA PRAKTIK ... DI ...`): **14pt bold**, centered.
+- **Cover identity block** (`Oleh`, nama, `NRP`): **12pt bold**, centered.
+- **Cover institution block** (Program Studi, Departemen, PENS, tahun): **12pt bold**, centered.
+- **Lembar Pengesahan heading** (`HALAMAN PENGESAHAN`, `KERJA PRAKTEK`): **14pt bold**, centered.
+- **Lembar Pengesahan body text**: **12pt** centered, with selective bold only for labels/headings (e.g., `Menyetujui`, jabatan, nama pejabat).
+
+Spacing must prioritize official visual rhythm: avoid extreme gaps, keep vertical spacing moderate and consistent, and maintain top-to-bottom balance similar to the DOCX reference.
+
 ## 4. Tables
 
 When generating tables:
