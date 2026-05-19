@@ -45,7 +45,7 @@ When generating/changing `template.typ`, use this hierarchy based on official re
 - **Cover title block** (`LAPORAN KERJA PRAKTIK ... DI ...`): **14pt bold**, centered.
 - **Cover identity block** (`Oleh`, nama, `NRP`): **12pt bold**, centered.
 - **Cover institution block** (Program Studi, Departemen, PENS, tahun): **12pt bold**, centered.
-- **Lembar Pengesahan heading** (`HALAMAN PENGESAHAN`, `KERJA PRAKTIK`): **14pt bold**, centered.
+- **Lembar Pengesahan heading** (`HALAMAN PENGESAHAN`, `KERJA PRAKTEK`): **14pt bold**, centered.
 - **Lembar Pengesahan body text**: **12pt** centered, with selective bold only for labels/headings (e.g., `Menyetujui`, jabatan, nama pejabat).
 
 Spacing must prioritize official visual rhythm: avoid extreme gaps, keep vertical spacing moderate and consistent, and maintain top-to-bottom balance similar to the DOCX reference.

@@ -25,16 +25,22 @@
   body,
 ) = {
   // Cover layout (first page follows sample PDF style)
+  let cover-yellow-start = 6.35cm
+  let cover-yellow-fill = rgb("#f6d100")
+  let cover-header-width = 6.95cm
+  let cover-header-height = 6.5cm
+
   set page(paper: "a4", margin: 0cm)
   set text(font: "Times New Roman", size: 12pt, lang: "id")
   set par(justify: false, first-line-indent: 0pt, leading: 1em, spacing: 1em)
 
   // -- COVER PAGE --
-  place(top + left, dy: 6.35cm)[
-    rect(width: 100%, height: 100%, fill: rgb("#f6d100"))
+  // These constants mirror the first-page proportions in Contoh_Laporan_KP.pdf.
+  place(top + left, dy: cover-yellow-start)[
+    rect(width: 100%, height: 100%, fill: cover-yellow-fill)
   ]
   place(top + right)[
-    rect(width: 6.95cm, height: 6.5cm, fill: white)
+    rect(width: cover-header-width, height: cover-header-height, fill: white)
   ]
   place(top + left, dx: 2.7cm, dy: 1.3cm)[
     image("media/logo-pens.png", width: 4.1cm)
@@ -56,9 +62,9 @@
     #v(1.0cm)
     #text(weight: "bold", size: 12pt)[Dosen Pembimbing :]
     #v(0.55cm)
-    #text(weight: "bold", size: 12pt)[........................................]
+    #text(weight: "bold", size: 12pt)[__________________________]
     #v(0.15cm)
-    #text(weight: "bold", size: 12pt)[NIP. .....................................]
+    #text(weight: "bold", size: 12pt)[NIP. ______________________]
     #v(0.9cm)
     #text(weight: "bold", size: 12pt)[
       PROGRAM STUDI #upper(prodi) \
