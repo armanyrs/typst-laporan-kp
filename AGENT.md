@@ -34,9 +34,9 @@ If the user asks to insert an image (e.g., UI of a game, or script flow), you mu
 For the cover page, these logo rules are strict and must always be preserved unless the user explicitly requests a different official format:
 
 - `media/logo-pens.png` MUST be rendered on the cover and must never be commented out or removed.
-- `media/lentera_nusantara_logo.png` MUST also be rendered on the cover (balanced with the PENS logo).
-- Preferred arrangement: both logos centered on one horizontal row, with proportional widths and equal visual weight.
-- If future code generation touches cover layout, preserve both logo calls and keep them visible.
+- For the official first-page style that follows `Contoh_Laporan_KP.pdf`, use the PENS logo on the top-left header area.
+- `media/lentera_nusantara_logo.png` is optional and may be used only when the user explicitly requests dual-logo cover composition.
+- If future code generation touches cover layout, preserve visible logo rendering and do not silently remove the PENS logo.
 
 ### Mandatory Font Hierarchy for Cover & Lembar Pengesahan
 

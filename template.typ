@@ -25,42 +25,42 @@
   body,
 ) = {
   // Cover layout (first page follows sample PDF style)
-  set page(paper: "a5", margin: 0cm)
+  set page(paper: "a4", margin: 0cm)
   set text(font: "Times New Roman", size: 12pt, lang: "id")
   set par(justify: false, first-line-indent: 0pt, leading: 1em, spacing: 1em)
 
   // -- COVER PAGE --
-  place(top + left, dy: 4.5cm)[
+  place(top + left, dy: 6.35cm)[
     rect(width: 100%, height: 100%, fill: rgb("#f6d100"))
   ]
   place(top + right)[
-    rect(width: 4.9cm, height: 4.6cm, fill: white)
+    rect(width: 6.95cm, height: 6.5cm, fill: white)
   ]
-  place(top + left, dx: 1.9cm, dy: 0.9cm)[
-    image("media/logo-pens.png", width: 2.9cm)
+  place(top + left, dx: 2.7cm, dy: 1.3cm)[
+    image("media/logo-pens.png", width: 4.1cm)
   ]
-  place(top + right, dx: -0.9cm, dy: 1.9cm)[
+  place(top + right, dx: -1.3cm, dy: 2.7cm)[
     text(weight: "bold", size: 14pt)[KERJA PRAKTEK]
   ]
 
-  v(6.0cm)
+  v(8.5cm)
   align(center)[
-    #text(weight: "bold", size: 13pt)[
+    #text(weight: "bold", size: 14pt)[
       #upper(title) \
       DI #upper(perusahaan)
     ]
     #v(1.25cm)
-    #text(weight: "bold", size: 11pt)[Oleh :]
+    #text(weight: "bold", size: 12pt)[Oleh :]
     #v(0.55cm)
-    #text(weight: "bold", size: 11pt)[#name NRP.#nrp]
+    #text(weight: "bold", size: 12pt)[#name NRP. #nrp]
     #v(1.0cm)
-    #text(weight: "bold", size: 11pt)[Dosen Pembimbing :]
+    #text(weight: "bold", size: 12pt)[Dosen Pembimbing :]
     #v(0.55cm)
-    #text(weight: "bold", size: 11pt)[........................................]
+    #text(weight: "bold", size: 12pt)[........................................]
     #v(0.15cm)
-    #text(weight: "bold", size: 11pt)[NIP. .....................................]
+    #text(weight: "bold", size: 12pt)[NIP. .....................................]
     #v(0.9cm)
-    #text(weight: "bold", size: 11pt)[
+    #text(weight: "bold", size: 12pt)[
       PROGRAM STUDI #upper(prodi) \
       DEPARTEMEN #upper(departemen) \
       POLITEKNIK ELEKTRONIKA NEGERI SURABAYA \
