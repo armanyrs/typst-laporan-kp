@@ -12,15 +12,17 @@ Template ini merupakan hasil modifikasi dari template Proposal PA agar sesuai de
 - **AI-Ready:** Dilengkapi dengan `AGENT.md` yang berisi _system prompt_ untuk GitHub Copilot, Cursor, atau Claude agar AI memahami aturan _formatting_ PENS dan Typst.
 
 ## 📂 Struktur Folder
-
+```text
 .
 ├── citation/
-│ └── refs.bib # File BibTeX untuk daftar pustaka
+│   └── refs.bib              # File BibTeX untuk daftar pustaka
+├── components/               # Folder untuk komponen fungsi tambahan Typst
+├── fonts/                    # Folder untuk custom fonts jika diperlukan
 ├── media/
-│ └── bg-pengesahan.jpg # WAJIB ADA: Gambar watermark untuk lembar pengesahan
-├── AGENT.md # Instruksi khusus untuk AI Assistant
-├── Contoh_Laporan_KP.pdf # Referensi isi dan gaya penulisan laporan (contoh jadi)
-├── Format Laporan KP.docx # Referensi resmi layout dan struktur bab dari kampus
-├── main.typ # FILE UTAMA: Tempat menulis isi laporan
-├── template.typ # FILE CORE: Pengaturan layout, cover, dan pengesahan
+│   └── bg-pengesahan.jpg     # WAJIB ADA: Gambar watermark untuk lembar pengesahan
+├── AGENT.md                  # Instruksi khusus untuk AI Assistant
+├── Contoh_Laporan_KP.pdf     # Referensi isi dan gaya penulisan laporan (contoh jadi)
+├── Format Laporan KP.docx    # Referensi resmi layout dan struktur bab dari kampus
+├── main.typ                  # FILE UTAMA: Tempat menulis isi laporan
+├── template.typ              # FILE CORE: Pengaturan layout, cover, dan pengesahan
 └── README.md
