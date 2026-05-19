@@ -30,23 +30,23 @@
   let cover-header-width = 6.95cm
   let cover-header-height = 6.5cm
 
-  set page(paper: "a4", margin: 0cm)
+  set page(paper: "a5", margin: 0cm)
   set text(font: "Times New Roman", size: 12pt, lang: "id")
   set par(justify: false, first-line-indent: 0pt, leading: 1em, spacing: 1em)
 
   // -- COVER PAGE --
   // These constants mirror the first-page proportions in Contoh_Laporan_KP.pdf.
   place(top + left, dy: cover-yellow-start)[
-    rect(width: 100%, height: 100%, fill: cover-yellow-fill)
+    #rect(width: 100%, height: 100%, fill: cover-yellow-fill)
   ]
   place(top + right)[
-    rect(width: cover-header-width, height: cover-header-height, fill: white)
+    #rect(width: cover-header-width, height: cover-header-height, fill: white)
   ]
   place(top + left, dx: 2.7cm, dy: 1.3cm)[
-    image("media/logo-pens.png", width: 4.1cm)
+    #image("media/logo-pens.png", width: 4.1cm)
   ]
   place(top + right, dx: -1.3cm, dy: 2.7cm)[
-    text(weight: "bold", size: 14pt)[KERJA PRAKTEK]
+    #text(weight: "bold", size: 14pt)[KERJA PRAKTEK]
   ]
 
   v(8.5cm)
