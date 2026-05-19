@@ -3,7 +3,16 @@
     margin: (left: 4cm, top: 3cm, right: 3cm, bottom: 3cm),
     background: image("media/bg-pengesahan.jpg", width: 100%, height: 100%, fit: "cover")
   )
-  body
+  set text(font: "Times New Roman", size: 12pt, lang: "id")
+  set par(justify: false, first-line-indent: 0pt, leading: 1em, spacing: 0.85em)
+
+  align(center)[
+    #v(0.4cm)
+    #text(weight: "bold", size: 14pt)[HALAMAN PENGESAHAN]
+    #text(weight: "bold", size: 14pt)[KERJA PRAKTIK]
+    #v(0.8cm)
+    #body
+  ]
 }
 
 #let laporan(
@@ -23,26 +32,27 @@
   set par(justify: true, first-line-indent: 0.5in, leading: 1em, spacing: 1.5em)
 
   // -- COVER PAGE --
-  v(2cm)
+  v(1.2cm)
   align(center)[
-    #text(weight: "bold", size: 16pt)[
+    #text(weight: "bold", size: 14pt)[
       #upper(title) \
       DI #upper(perusahaan)
     ]
     
-    #v(2cm)
-    #image("media/logo-pens.png", width: 5cm)
-    #v(2cm)
+    #v(1.2cm)
+    #image("media/logo-pens.png", width: 2.9cm)
+    #h(0.8cm)
+    #image("media/lentera_nusantara_logo.png", width: 2.9cm)
+    #v(1.1cm)
 
-    #text(weight: "bold", size: 14pt)[
-      Oleh: \
-      #name \
-      NRP. #nrp
-    ]
+    #text(weight: "bold", size: 12pt)[Oleh:]
+    #v(0.2cm)
+    #text(weight: "bold", size: 12pt)[#name]
+    #text(weight: "bold", size: 12pt)[NRP. #nrp]
 
     #v(1fr)
 
-    #text(weight: "bold", size: 14pt)[
+    #text(weight: "bold", size: 12pt)[
       PROGRAM STUDI #upper(prodi) \
       DEPARTEMEN #upper(departemen) \
       POLITEKNIK ELEKTRONIKA NEGERI SURABAYA \
