@@ -56,11 +56,11 @@
       DI #upper(perusahaan)
     ]
     #v(1.25cm)
-    #text(weight: "bold", size: 12pt)[Oleh :]
+    #text(weight: "bold", size: 12pt)[Oleh:]
     #v(0.55cm)
     #text(weight: "bold", size: 12pt)[#name NRP. #nrp]
     #v(1.0cm)
-    #text(weight: "bold", size: 12pt)[Dosen Pembimbing :]
+    #text(weight: "bold", size: 12pt)[Dosen Pembimbing:]
     #v(0.55cm)
     #text(weight: "bold", size: 12pt)[__________________________]
     #v(0.15cm)
