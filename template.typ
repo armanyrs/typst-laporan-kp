@@ -24,35 +24,43 @@
   perusahaan: "",
   body,
 ) = {
-  // Paper layout
-  set page(paper: "a4", margin: (left: 4cm, top: 3cm, right: 3cm, bottom: 3cm))
+  // Cover layout (first page follows sample PDF style)
+  set page(paper: "a5", margin: 0cm)
   set text(font: "Times New Roman", size: 12pt, lang: "id")
-
-  // Paragraph settings: justified, 1.5 spacing
-  set par(justify: true, first-line-indent: 0.5in, leading: 1em, spacing: 1.5em)
+  set par(justify: false, first-line-indent: 0pt, leading: 1em, spacing: 1em)
 
   // -- COVER PAGE --
-  v(1.2cm)
+  place(top + left, dy: 4.5cm)[
+    rect(width: 100%, height: 100%, fill: rgb("#f6d100"))
+  ]
+  place(top + right)[
+    rect(width: 4.9cm, height: 4.6cm, fill: white)
+  ]
+  place(top + left, dx: 1.9cm, dy: 0.9cm)[
+    image("media/logo-pens.png", width: 2.9cm)
+  ]
+  place(top + right, dx: -0.9cm, dy: 1.9cm)[
+    text(weight: "bold", size: 14pt)[KERJA PRAKTEK]
+  ]
+
+  v(6.0cm)
   align(center)[
-    #text(weight: "bold", size: 14pt)[
+    #text(weight: "bold", size: 13pt)[
       #upper(title) \
       DI #upper(perusahaan)
     ]
-    
-    #v(1.2cm)
-    #image("media/logo-pens.png", width: 2.9cm)
-    #h(0.8cm)
-    #image("media/lentera_nusantara_logo.png", width: 2.9cm)
-    #v(1.1cm)
-
-    #text(weight: "bold", size: 12pt)[Oleh:]
-    #v(0.2cm)
-    #text(weight: "bold", size: 12pt)[#name]
-    #text(weight: "bold", size: 12pt)[NRP. #nrp]
-
-    #v(1fr)
-
-    #text(weight: "bold", size: 12pt)[
+    #v(1.25cm)
+    #text(weight: "bold", size: 11pt)[Oleh :]
+    #v(0.55cm)
+    #text(weight: "bold", size: 11pt)[#name NRP.#nrp]
+    #v(1.0cm)
+    #text(weight: "bold", size: 11pt)[Dosen Pembimbing :]
+    #v(0.55cm)
+    #text(weight: "bold", size: 11pt)[........................................]
+    #v(0.15cm)
+    #text(weight: "bold", size: 11pt)[NIP. .....................................]
+    #v(0.9cm)
+    #text(weight: "bold", size: 11pt)[
       PROGRAM STUDI #upper(prodi) \
       DEPARTEMEN #upper(departemen) \
       POLITEKNIK ELEKTRONIKA NEGERI SURABAYA \
@@ -61,6 +69,10 @@
   ]
 
   pagebreak()
+
+  // Paper layout for remaining pages
+  set page(paper: "a4", margin: (left: 4cm, top: 3cm, right: 3cm, bottom: 3cm))
+  set par(justify: true, first-line-indent: 0.5in, leading: 1em, spacing: 1.5em)
 
   // -- BODY CONTENT --
   
