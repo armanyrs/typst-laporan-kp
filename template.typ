@@ -46,7 +46,7 @@
     #image("media/logo-pens.png", width: 4.1cm)
   ]
   place(top + right, dx: -1.3cm, dy: 2.7cm)[
-    #text(weight: "bold", size: 14pt)[KERJA PRAKTEK]
+    #text(weight: "bold", size: 14pt)[KERJA PRAKTIK]
   ]
 
   v(8.5cm)
