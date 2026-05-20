@@ -1,7 +1,9 @@
+#import "@preview/decasify:0.11.3": titlecase
+
 #let lembar-pengesahan(body) = {
   set page(
     margin: (left: 4cm, top: 3cm, right: 3cm, bottom: 3cm),
-    background: image("media/bg-pengesahan.jpg", width: 100%, height: 100%, fit: "cover")
+    background: image("media/bg-pengesahan.jpg", width: 100%, height: 100%, fit: "cover"),
   )
   set text(font: "Times New Roman", size: 12pt, lang: "id")
   set par(justify: false, first-line-indent: 0pt, leading: 1em, spacing: 0.85em)
@@ -19,6 +21,8 @@
   title: "LAPORAN KERJA PRAKTIK",
   name: "",
   nrp: "",
+  dospem: "",
+  nip: "",
   prodi: "",
   departemen: "",
   perusahaan: "",
@@ -31,7 +35,7 @@
   let cover-header-height = 6.5cm
 
   set page(paper: "a5", margin: 0cm)
-  set text(font: "Times New Roman", size: 12pt, lang: "id")
+  set text(font: "Times New Roman", size: 10pt, lang: "id")
   set par(justify: false, first-line-indent: 0pt, leading: 1em, spacing: 1em)
 
   // -- COVER PAGE --
@@ -39,9 +43,9 @@
   place(top + left, dy: cover-yellow-start)[
     #rect(width: 100%, height: 100%, fill: cover-yellow-fill)
   ]
-  place(top + right)[
-    #rect(width: cover-header-width, height: cover-header-height, fill: white)
-  ]
+  // place(top + right)[
+  //   #rect(width: cover-header-width, height: cover-header-height, fill: white)
+  // ]
   place(top + left, dx: 2.7cm, dy: 1.3cm)[
     #image("media/logo-pens.png", width: 4.1cm)
   ]
@@ -51,22 +55,22 @@
 
   v(8.5cm)
   align(center)[
-    #text(weight: "bold", size: 14pt)[
+    #text(weight: "bold", size: 12pt)[
       #upper(title) \
       DI #upper(perusahaan)
     ]
     #v(1.25cm)
-    #text(weight: "bold", size: 12pt)[Oleh:]
+    #text(weight: "bold")[Oleh:]
     #v(0.55cm)
-    #text(weight: "bold", size: 12pt)[#name NRP. #nrp]
+    #text(weight: "bold")[#underline()[#name] \ NRP. #nrp]
     #v(1.0cm)
-    #text(weight: "bold", size: 12pt)[Dosen Pembimbing:]
+    #text(weight: "bold")[Dosen Pembimbing:]
     #v(0.55cm)
-    #text(weight: "bold", size: 12pt)[__________________________]
+    #text(weight: "bold", lang: "en")[#titlecase()[#underline()[#dospem]] \ NIP. #nip]
     #v(0.15cm)
-    #text(weight: "bold", size: 12pt)[NIP. ______________________]
+    // #text(weight: "bold", size: 12pt)[NIP. ______________________]
     #v(0.9cm)
-    #text(weight: "bold", size: 12pt)[
+    #text(weight: "bold")[
       PROGRAM STUDI #upper(prodi) \
       DEPARTEMEN #upper(departemen) \
       POLITEKNIK ELEKTRONIKA NEGERI SURABAYA \
@@ -77,11 +81,11 @@
   pagebreak()
 
   // Paper layout for remaining pages
-  set page(paper: "a4", margin: (left: 4cm, top: 3cm, right: 3cm, bottom: 3cm))
+  set page(paper: "a5", margin: (left: 4cm, top: 3cm, right: 3cm, bottom: 3cm))
   set par(justify: true, first-line-indent: 0.5in, leading: 1em, spacing: 1.5em)
 
   // -- BODY CONTENT --
-  
+
   // Set heading numbering for chapters
   set heading(numbering: "1.1")
 

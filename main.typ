@@ -4,6 +4,8 @@
   title: "Laporan Kerja Praktik",
   name: "Armany Rizqullah Saputra",
   nrp: "5323600029",
+  dospem: "pak maulana",
+  nip: "01234566",
   prodi: "Teknologi Rekayasa Multimedia",
   departemen: "Teknologi Multimedia Kreatif",
   perusahaan: "PT Unimaksima Lentera Nusantara, Bandung",
