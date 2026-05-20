@@ -19,27 +19,26 @@
     #text(weight: "bold", size: 14pt)[LEMBAR PENGESAHAN]
   ]
   #v(2em)
-  // Isi lembar pengesahan bisa disesuaikan di sini
   Laporan Kerja Praktik ini telah disetujui dan disahkan pada tanggal ...
 ]
 
 #pagebreak()
 
 #heading(level: 1, numbering: none)[ABSTRAK]
-Industri game berkembang sangat pesat seiring meningkatnya kebutuhan pasar terhadap pengalaman bermain yang imersif, personal, dan mudah diakses lintas bahasa. Pada ranah visual novel, kualitas pengalaman pengguna sangat dipengaruhi oleh stabilitas alur cerita bercabang, efisiensi eksekusi script, serta konsistensi penyajian dialog pada berbagai konteks antarmuka.
+Industri game global mengalami pertumbuhan yang signifikan seiring meningkatnya adopsi platform digital dan kebutuhan pengguna terhadap pengalaman interaktif yang personal. Pada segmen visual novel, kualitas produk ditentukan oleh kekuatan naratif, kestabilan alur percabangan, dan konsistensi tampilan teks pada antarmuka. Kondisi tersebut menuntut pengembangan perangkat lunak yang tidak hanya kreatif, tetapi juga terstruktur secara teknis agar iterasi konten dapat berlangsung cepat tanpa menurunkan kualitas pengalaman pengguna.
 
-Laporan Kerja Praktik ini membahas kontribusi teknis pada pengembangan proyek visual novel di PT Unimaksima Lentera Nusantara melalui peran sebagai Unity Game Programmer. Fokus kegiatan meliputi refactoring kode C# untuk meningkatkan keterbacaan dan maintainability, integrasi Naninovel agar alur naratif lebih terstruktur, serta pengembangan sistem lokalisasi bahasa untuk mendukung distribusi konten kepada audiens yang lebih luas.
+Kerja Praktik ini dilaksanakan di PT Unimaksima Lentera Nusantara dengan peran sebagai Unity Game Programmer pada proyek Visual Novel 101 Forgotten. Ruang lingkup kegiatan mencakup refactoring script C\# dari pendekatan hardcoded ke data-driven, integrasi dan migrasi Naninovel hingga versi 2.1, pengembangan sistem lokalisasi multibahasa Indonesia-Jepang, serta modernisasi antarmuka dari Legacy Text ke TextMeshPro. Implementasi teknis juga mencakup perbaikan transisi visual novel ke mode adventure 3D, penataan routing script, dan penguatan fitur codex berbasis command kustom.
 
-Hasil implementasi menunjukkan peningkatan pada konsistensi arsitektur script, kemudahan kolaborasi lintas tim, dan kesiapan proyek dalam menghadapi kebutuhan iterasi konten yang cepat. Secara keseluruhan, kegiatan kerja praktik memperlihatkan bahwa optimalisasi teknis pada lapisan script dan lokalisasi berkontribusi langsung terhadap kualitas produk visual novel serta efisiensi proses produksi.
+Hasil kegiatan menunjukkan peningkatan pada keterpeliharaan basis kode, stabilitas eksekusi narasi, dan kesiapan distribusi konten lintas bahasa. Perubahan arsitektur pada layer script dan lokalisasi memberikan dampak langsung terhadap efisiensi kolaborasi tim, pengurangan risiko error saat iterasi, serta peningkatan kualitas penyajian pengalaman bermain. Secara umum, kerja praktik ini menegaskan bahwa optimalisasi engineering workflow pada proyek visual novel merupakan faktor penting dalam menjaga keberlanjutan pengembangan produk.
 
-Kata kunci: Unity, C#, Naninovel, visual novel, lokalisasi bahasa, refactoring.
+Kata kunci: Unity, C\#, Naninovel, visual novel, lokalisasi bahasa, refactoring.
 
 #heading(level: 1, numbering: none)[KATA PENGANTAR]
-Puji syukur ke hadirat Allah SWT atas rahmat dan karunia-Nya sehingga laporan Kerja Praktik ini dapat diselesaikan dengan baik. Laporan ini disusun sebagai bentuk pertanggungjawaban akademis atas pelaksanaan Kerja Praktik pada PT Unimaksima Lentera Nusantara, sekaligus sebagai sarana refleksi atas proses pembelajaran yang diperoleh melalui penerapan langsung kompetensi rekayasa perangkat lunak game di lingkungan industri.
+Puji syukur ke hadirat Allah SWT atas rahmat dan karunia-Nya sehingga laporan Kerja Praktik ini dapat diselesaikan dengan baik. Laporan ini disusun sebagai bentuk pertanggungjawaban akademis atas pelaksanaan kerja praktik di PT Unimaksima Lentera Nusantara, sekaligus sebagai media refleksi atas proses pembelajaran pada lingkungan pengembangan game profesional.
 
-Penyusunan laporan ini tidak terlepas dari dukungan berbagai pihak. Oleh karena itu, penulis menyampaikan terima kasih kepada pihak perusahaan, dosen pembimbing, serta seluruh pihak yang telah memberikan arahan, masukan, dan dukungan selama proses Kerja Praktik berlangsung. Penulis juga menyadari bahwa laporan ini masih memiliki keterbatasan, sehingga kritik dan saran yang membangun sangat diharapkan untuk penyempurnaan pada masa mendatang.
+Selama pelaksanaan kegiatan, banyak pengalaman teknis yang diperoleh, mulai dari penataan arsitektur script C\#, penguatan sistem naratif berbasis Naninovel, hingga implementasi lokalisasi multibahasa pada antarmuka dan konten cerita. Keseluruhan proses tersebut memberikan pemahaman praktis mengenai pentingnya integrasi antara kebutuhan desain naratif, rekayasa perangkat lunak, dan kolaborasi lintas fungsi dalam pipeline produksi visual novel.
 
-Semoga laporan ini dapat memberikan manfaat bagi pengembangan kerja sama antara institusi pendidikan dan industri, serta menjadi referensi awal bagi mahasiswa yang akan melaksanakan Kerja Praktik pada bidang pengembangan game dan visual novel.
+Ucapan terima kasih disampaikan kepada pihak perusahaan, dosen pembimbing, serta seluruh pihak yang telah memberikan arahan dan dukungan selama kegiatan berlangsung. Penulis menyadari bahwa laporan ini masih memiliki keterbatasan, sehingga kritik dan saran yang membangun sangat diharapkan demi penyempurnaan karya pada masa mendatang. Semoga laporan ini dapat memberikan manfaat bagi institusi, perusahaan, serta mahasiswa yang akan melaksanakan kerja praktik pada bidang pengembangan game.
 
 #pagebreak()
 #heading(level: 1, numbering: none)[DAFTAR ISI]
@@ -53,85 +52,79 @@ Semoga laporan ini dapat memberikan manfaat bagi pengembangan kerja sama antara 
 = PENDAHULUAN
 
 == Latar Belakang
-Industri game global menunjukkan pertumbuhan yang konsisten, didorong oleh peningkatan adopsi perangkat digital, perkembangan model bisnis distribusi daring, serta kebutuhan konten interaktif yang semakin beragam.
+Industri game berkembang sangat pesat dalam dekade terakhir, ditandai dengan peningkatan jumlah pemain, perluasan kanal distribusi digital, dan pertumbuhan kebutuhan konten interaktif yang semakin beragam. Perkembangan ini mendorong perusahaan pengembang untuk menghasilkan produk yang bukan hanya menarik secara visual, tetapi juga stabil secara teknis dan adaptif terhadap perubahan kebutuhan pengguna.
 
-Di dalam ekosistem tersebut, visual novel menjadi salah satu bentuk karya yang menekankan kekuatan narasi, percabangan alur, dan kedalaman interaksi pengguna. Karakteristik ini menuntut proses pengembangan yang tidak hanya kreatif, tetapi juga terstruktur secara teknis agar pengalaman bermain tetap stabil pada setiap skenario cerita.
+Pada konteks tersebut, visual novel menjadi salah satu genre yang menonjol karena menempatkan narasi, percabangan alur, dan kualitas penyajian teks sebagai elemen utama pengalaman bermain. Kompleksitas pengelolaan skenario, dialog, state permainan, dan transisi antarmode menuntut fondasi rekayasa perangkat lunak yang terstruktur. Jika arsitektur script tidak dirancang dengan baik, proses iterasi konten berpotensi lambat, risiko bug meningkat, dan koordinasi lintas tim menjadi kurang efisien.
 
-Dalam pengembangan visual novel berbasis Unity, kualitas implementasi script berpengaruh langsung pada performa, kemudahan pemeliharaan, dan kecepatan iterasi konten. Ketika struktur kode tidak konsisten, tim akan menghadapi hambatan pada proses debugging, pengembangan fitur baru, dan sinkronisasi antaranggota. Oleh sebab itu, refactoring dan standardisasi script C# menjadi langkah penting untuk menjaga keberlanjutan proyek, terutama pada fase pengembangan yang melibatkan perubahan kebutuhan secara dinamis.
+Selain optimalisasi script, lokalisasi bahasa juga menjadi aspek strategis untuk memperluas jangkauan pasar visual novel. Kualitas lokalisasi tidak hanya ditentukan oleh terjemahan teks, tetapi juga oleh kesiapan sistem untuk menampilkan konten lintas bahasa secara konsisten pada berbagai komponen UI dan alur narasi. Implementasi sistem lokalisasi yang lemah dapat menimbulkan ketidaksesuaian istilah, fallback yang tidak diharapkan, hingga gangguan pengalaman pengguna.
 
-Selain optimalisasi script, lokalisasi bahasa juga menjadi aspek strategis dalam perluasan jangkauan produk game. Visual novel sangat bergantung pada kualitas penyampaian teks; kesalahan pemetaan dialog, inkonsistensi istilah, atau keterbatasan dukungan multi-bahasa dapat menurunkan kualitas pengalaman pengguna. Implementasi sistem lokalisasi yang baik harus mampu mengelola aset teks secara terpusat, mendukung pembaruan konten secara efisien, serta menjaga konsistensi naratif pada tiap bahasa target.
-
-Berdasarkan kebutuhan tersebut, Kerja Praktik di PT Unimaksima Lentera Nusantara dilaksanakan dengan fokus pada penguatan fondasi teknis proyek visual novel melalui peran sebagai Unity Game Programmer. Kegiatan meliputi perapihan arsitektur script C#, integrasi Naninovel sebagai kerangka pengelolaan narasi, serta pengembangan alur lokalisasi yang mendukung proses produksi konten secara berkelanjutan.
+Berdasarkan kebutuhan tersebut, pelaksanaan kerja praktik di PT Unimaksima Lentera Nusantara difokuskan pada penguatan fondasi teknis proyek visual novel melalui peran Unity Game Programmer. Kontribusi yang dilakukan meliputi refactoring script C\#, integrasi dan penyesuaian Naninovel, serta pengembangan pipeline lokalisasi multibahasa yang mendukung siklus produksi konten secara berkelanjutan.
 
 == Rumusan Masalah
-1. Bagaimana proses refactoring script C# dapat meningkatkan keterbacaan kode, konsistensi arsitektur, dan efisiensi pemeliharaan proyek visual novel berbasis Unity?
-2. Bagaimana integrasi Naninovel dapat mendukung pengelolaan alur narasi bercabang agar lebih terstruktur dan mudah dikembangkan?
-3. Bagaimana perancangan sistem lokalisasi bahasa dapat memastikan konsistensi konten serta mempermudah pembaruan teks lintas bahasa pada proyek visual novel?
+1. Bagaimana penerapan refactoring script C\# dapat meningkatkan keterpeliharaan kode dan efisiensi pengembangan proyek visual novel berbasis Unity?
+2. Bagaimana integrasi Naninovel dapat memperkuat pengelolaan alur narasi, transisi mode permainan, dan stabilitas eksekusi script?
+3. Bagaimana pengembangan sistem lokalisasi multibahasa dapat menjaga konsistensi konten UI dan dialog secara dinamis?
 
 == Tujuan
-Tujuan pelaksanaan Kerja Praktik ini adalah:
-
-1. Menerapkan praktik refactoring pada script C# untuk membangun basis kode yang lebih modular, rapi, dan mudah dipelihara.
-2. Mengintegrasikan Naninovel ke dalam proyek Unity sebagai fondasi pengelolaan alur cerita, dialog, dan transisi adegan.
-3. Mengembangkan mekanisme lokalisasi bahasa yang mendukung pengelolaan aset teks secara konsisten dan terukur.
+1. Menerapkan praktik refactoring pada script C\# untuk membangun basis kode yang lebih modular, rapi, dan mudah dipelihara.
+2. Mengoptimalkan integrasi Naninovel untuk mendukung routing cerita, command kustom, dan sinkronisasi mode visual novel dengan mode adventure 3D.
+3. Mengembangkan mekanisme lokalisasi bahasa berbasis managed text dan dokumen teks agar pembaruan konten lintas bahasa lebih sistematis.
 4. Meningkatkan pemahaman terhadap alur kerja pengembangan game di lingkungan industri, khususnya pada proyek visual novel.
 
 == Manfaat
-Pelaksanaan Kerja Praktik ini diharapkan memberikan manfaat sebagai berikut:
-
-1. Bagi penulis, kegiatan ini menjadi sarana penguatan kompetensi teknis dan profesional pada pengembangan game berbasis Unity.
-2. Bagi perusahaan, kontribusi teknis yang diberikan dapat mendukung peningkatan kualitas pipeline pengembangan narasi dan lokalisasi.
-3. Bagi institusi pendidikan, hasil kegiatan dapat menjadi masukan terkait kesesuaian kompetensi akademik dengan kebutuhan industri kreatif digital.
+1. Bagi mahasiswa, kegiatan ini memperkuat kompetensi teknis pemrograman Unity, manajemen sistem naratif, serta praktik lokalisasi dalam proyek nyata.
+2. Bagi perusahaan, kontribusi teknis mendukung penguatan stabilitas produk, efisiensi iterasi konten, dan konsistensi pengembangan lintas tim.
+3. Bagi institusi pendidikan, hasil kerja praktik menjadi rujukan keterkaitan kompetensi akademik dengan kebutuhan industri game berbasis narasi.
 
 = GAMBARAN UMUM PERUSAHAAN
 
 == Sejarah Singkat PT Unimaksima Lentera Nusantara
-PT Unimaksima Lentera Nusantara berkembang sebagai perusahaan kreatif digital yang menempatkan pengembangan game sebagai salah satu fokus utamanya. Perjalanan perusahaan diawali dari inisiatif membangun produk interaktif yang menggabungkan kekuatan cerita dan teknologi, kemudian bertumbuh melalui penguatan tim pengembang, peningkatan kapasitas produksi, serta penyesuaian strategi produk terhadap dinamika pasar industri game.
+PT Unimaksima Lentera Nusantara berkembang sebagai perusahaan kreatif digital yang menempatkan pengembangan produk interaktif sebagai fokus utama kegiatan bisnis. Dalam konteks kerja praktik ini, perusahaan menunjukkan orientasi pada pengembangan game berbasis narasi yang memadukan kebutuhan desain cerita, pengelolaan aset, dan implementasi teknis dalam satu pipeline produksi.
 
-Dalam fase pengembangannya, perusahaan menunjukkan orientasi pada kualitas pipeline produksi, terutama pada pengelolaan konten naratif dan kesiapan teknis produk untuk proses iterasi. Arah ini menjadi landasan penting bagi pelaksanaan Kerja Praktik karena kebutuhan optimalisasi script dan lokalisasi tidak berdiri sendiri, melainkan merupakan bagian dari strategi perusahaan untuk menjaga kualitas dan skalabilitas pengembangan visual novel.
+Seiring pengembangan proyek, kebutuhan perusahaan bergerak pada penguatan skalabilitas proses produksi, terutama pada pengelolaan script, konsistensi antarmuka, dan lokalisasi konten lintas bahasa. Arah tersebut menjadi landasan penting yang menjelaskan mengapa kontribusi kerja praktik difokuskan pada refactoring sistem, integrasi engine naratif, serta standardisasi alur lokalisasi.
 
 == Struktur Organisasi PT Unimaksima Lentera Nusantara
-Struktur organisasi PT Unimaksima Lentera Nusantara secara umum tersusun dari fungsi manajerial, fungsi kreatif, dan fungsi teknis yang saling terhubung dalam siklus produksi game. Fungsi manajerial berperan dalam penetapan prioritas proyek dan pengendalian kualitas, fungsi kreatif menangani desain naratif serta pengalaman pemain, sedangkan fungsi teknis memastikan implementasi sistem berjalan stabil dan efisien.
+Struktur organisasi perusahaan pada proyek pengembangan game tersusun atas fungsi manajerial, fungsi kreatif, dan fungsi teknis yang bekerja secara terkoordinasi. Fungsi manajerial berperan dalam perencanaan target dan kontrol kualitas, fungsi kreatif menangani desain naratif serta arah artistik, sedangkan fungsi teknis memastikan implementasi fitur berjalan stabil sesuai kebutuhan produksi.
 
-Pada alur kerja tersebut, peran Unity Game Programmer berada pada simpul koordinasi antara kebutuhan desain dan implementasi perangkat lunak. Posisi ini menuntut kemampuan menerjemahkan kebutuhan naratif ke dalam struktur script yang maintainable, sekaligus menjaga kompatibilitas sistem seperti Naninovel dan modul lokalisasi agar proses produksi konten dapat berlangsung konsisten lintas tim.
+Pada alur tersebut, posisi Unity Game Programmer berada pada titik integrasi antara kebutuhan desain dan realisasi sistem di engine Unity. Peran ini menuntut komunikasi aktif dengan tim naratif, UI/UX, dan programmer lain agar perubahan konten, routing cerita, serta lokalisasi dapat diimplementasikan konsisten tanpa mengganggu stabilitas build.
 
 = HASIL KEGIATAN KERJA PRAKTIK
 
-== Lingkup Kegiatan dan Peran Teknis
-Selama pelaksanaan Kerja Praktik pada periode Januari sampai Mei 2026, penulis ditempatkan pada pengembangan proyek visual novel dengan tanggung jawab utama pada pengelolaan script Unity, integrasi Naninovel, serta penguatan pipeline lokalisasi.
+== Ruang Lingkup Kegiatan
+Pelaksanaan kerja praktik berlangsung pada pengembangan proyek Visual Novel 101 Forgotten dengan tanggung jawab utama pada penguatan sistem gameplay berbasis script, manajemen narasi Naninovel, dan implementasi lokalisasi konten. Kegiatan diawali dari tahap adaptasi workflow studio, pengenalan arsitektur proyek, serta pemetaan kebutuhan teknis yang memengaruhi stabilitas alur permainan dan keberlanjutan iterasi konten.
 
-Ruang lingkup pekerjaan mencakup pengembangan fitur gameplay awal (seperti sistem trigger animasi musuh dan drag-and-drop puzzle), perbaikan arsitektur fase serta objective, migrasi komponen UI ke TextMeshPro, hingga sinkronisasi alur visual novel dengan mode adventure 3D. Aktivitas teknis tersebut tidak dikerjakan sebagai daftar tugas terpisah, melainkan sebagai rangkaian perbaikan berkelanjutan untuk meningkatkan stabilitas proyek dan kemudahan iterasi konten.
+Pada fase awal, kontribusi teknis mencakup implementasi fitur gameplay seperti trigger animasi musuh, integrasi dialog Naninovel berbasis event, serta mekanisme puzzle drag-and-drop yang terhubung ke sistem progres fase. Tahap ini menjadi dasar untuk mengidentifikasi keterbatasan struktur lama, terutama pada penggunaan logika hardcoded yang menyulitkan pemeliharaan dan pengembangan lanjutan.
 
-Pendekatan kerja dimulai dari identifikasi bottleneck pada struktur kode dan alur pemrosesan narasi. Hasil identifikasi tersebut kemudian diterjemahkan ke dalam prioritas perbaikan yang menitikberatkan pada keterbacaan kode, pemisahan tanggung jawab modul, dan kestabilan interaksi antarsistem. Dengan pendekatan ini, kontribusi teknis yang diberikan memiliki dampak langsung pada efisiensi produksi dan kesiapan proyek untuk tahap pengembangan berikutnya.
+== Refactoring Arsitektur Script C\# Berbasis Data
+Penguatan fondasi sistem dilakukan melalui refactoring bertahap dari pendekatan prosedural menuju arsitektur data-driven. Sistem phase dan objective yang sebelumnya bergantung pada switch-case dirombak dengan memanfaatkan ScriptableObject relasional untuk memisahkan data objective, aturan perpindahan fase, dan pengaturan ambience. Pendekatan ini mendorong pemisahan concern antara penulisan konten dan logika permainan.
 
-== Refactoring Script C# pada Proyek Unity
-Refactoring dilakukan bertahap dari level fitur menuju level arsitektur. Pada tahap awal, pemisahan script cerita ke unit ACT, objective, easter egg, dan interactive dilakukan agar alur narasi lebih modular dan mudah ditelusuri. Pada tahap berikutnya, sistem perpindahan phase dan objective yang semula berbasis hardcoded switch-case dirombak menjadi pendekatan data-driven menggunakan ScriptableObject relasional (antara data objective dan state phase) sehingga pengelolaan data dapat dipusatkan.
+Refactoring kemudian diperkuat dengan penyederhanaan command penghubung mode visual novel dan adventure 3D, penerapan mitigasi null reference pada command global, serta standardisasi debug berbasis directive editor-only. Selain meningkatkan keterbacaan kode, perubahan ini juga mengurangi potensi crash saat perpindahan mode dan mempermudah proses pengujian. Pada tahap lanjut, pemetaan label objective dilakukan secara dinamis sehingga penambahan konten baru tidak lagi memerlukan perubahan kode yang bersifat repetitif.
 
-Perbaikan juga dilakukan pada level maintainability melalui penerapan pola kerja MVC berbasis label, penggunaan directive debug khusus editor, serta standardisasi penamaan file dan command. Hasil refactoring ini menghasilkan basis kode yang lebih konsisten untuk debugging, mengurangi ketergantungan pada identifier numerik statis, dan mempermudah onboarding anggota tim ketika menambahkan konten fase baru.
+== Integrasi dan Migrasi Naninovel
+Kontribusi pada lapisan naratif difokuskan pada penataan routing script, penguatan command kustom, dan stabilisasi transisi antarscene. Proses ini meliputi modularisasi script narasi, pembaruan pola penamaan skenario, serta penyempurnaan command untuk memisahkan objective utama dan interaksi flavor text. Integrasi juga mencakup penyelesaian isu transisi blank screen pada perpindahan mode permainan melalui sinkronisasi state kamera dan eksekusi script.
 
-== Integrasi Naninovel untuk Manajemen Narasi
-Integrasi Naninovel difokuskan pada penguatan routing cerita dan sinkronisasi antar-mode permainan. Implementasi awal mencakup eksplorasi Script Graph, penggunaan command goto untuk percabangan antarscript, serta penyusunan standar penamaan script agar struktur chapter dan section lebih mudah dimonitor. Setelah itu, integrasi diperluas ke transisi mode visual novel menuju adventure 3D beserta penanganan isu state yang sempat memicu kondisi freeze dan layar hitam saat interaksi menu tertentu.
+Seiring perkembangan proyek, dilakukan migrasi mayor Naninovel dari versi 1.18 ke 2.1. Migrasi ini menuntut rekonstruksi prefab printer dialog, penyesuaian input indicator, pembaruan sintaks command, dan perbaikan kompatibilitas script path relatif. Pada periode yang sama, implementasi fitur choice handler bergambar, chapter overlay dinamis, serta penyesuaian command codex dilakukan untuk meningkatkan kualitas presentasi naratif. Perbaikan parameter parsing dan validasi unlock state turut memperkuat kestabilan eksekusi command pada skenario bercabang.
 
-Pada fase lanjutan, arsitektur custom UI untuk chapter overlay dan choice handler diperbarui agar mendukung render teks dinamis dan efek visual tambahan. Proyek juga mengalami migrasi Naninovel dari versi 1.18 ke 2.1 yang diikuti penyesuaian text printer, input indicator, command kompatibilitas, serta perbaikan parameter parsing. Integrasi ini membuat alur narasi lebih stabil, sekaligus menjaga kompatibilitas fitur legacy seperti codex auto-unlock dan notifikasi toast berbasis command kustom.
+== Pengembangan Sistem Lokalisasi dan Modernisasi UI
+Pengembangan lokalisasi dilaksanakan secara progresif melalui pembuatan managed text untuk UI dan karakter, pengaturan struktur direktori lokalisasi, serta penerapan asset swapping agar elemen visual dan audio menyesuaikan locale secara otomatis. Sistem ini mendukung kebutuhan bilingual Indonesia-Jepang dan mengurangi ketergantungan pada penulisan string langsung di dalam script.
 
-== Pengembangan Sistem Lokalisasi Bahasa
-Pengembangan lokalisasi diarahkan pada dukungan bilingual Indonesia-Jepang melalui mekanisme managed text dan asset swapping terstruktur. Implementasi mencakup pembuatan berkas lokalisasi untuk UI dan character name, pengaturan struktur direktori resource yang memetakan aset master, serta penghilangan hardcoded string pada skrip puzzle agar hint dan message dapat diganti dinamis sesuai locale pemain.
+Tahap modernisasi antarmuka dilakukan dengan migrasi menyeluruh dari Legacy Text ke TextMeshPro pada komponen utama seperti printer dialog, control panel, pause UI, backlog, save-load, dan puzzle UI. Proses ini disertai pembuatan shader TMP kustom untuk efek revealable, baking atlas font Jepang, konfigurasi fallback CJK, serta penyesuaian script tombol agar tetap kompatibel dengan arsitektur engine. Hasilnya, kualitas rendering teks meningkat dan isu missing glyph dapat dikurangi secara signifikan.
 
-Selain aspek data, peningkatan dilakukan pada lapisan presentasi melalui migrasi komponen teks dari legacy text ke TextMeshPro, termasuk pengembangan shader TMP kustom untuk animasi revealable dan dukungan fallback font CJK. Pada tahap berikutnya, sistem lokalisasi dimigrasikan ke format dokumen teks (.txt) untuk menggantikan skrip terjemahan legacy yang rentan konflik eksekusi. Pendekatan ini memperkuat koordinasi antara tim teknis dan penulis naskah, serta membuat proses validasi translasi dan pengujian UI menjadi lebih sistematis.
+Pada fase lanjutan, sistem lokalisasi dimigrasikan dari duplikasi script terjemahan ke format dokumen teks standar (.txt) Naninovel 2.1. Migrasi ini diikuti penataan ulang scenario root, perbaikan metadata yang korup, serta integrasi lokalisasi pada codex panel agar seluruh elemen UI dapat bertukar bahasa secara konsisten. Dengan demikian, alur kerja translasi menjadi lebih terpusat dan lebih aman dari konflik eksekusi.
 
-== Capaian dan Dampak Kontribusi
-Secara umum, rangkaian kegiatan teknis menghasilkan peningkatan pada tiga aspek utama, yaitu keterpeliharaan kode, stabilitas eksekusi narasi, dan kesiapan distribusi multi-bahasa. Refactoring C# mengurangi kompleksitas logika phase-objective, integrasi Naninovel memperkuat manajemen routing serta transisi mode permainan, sedangkan pipeline lokalisasi dan migrasi TMP meningkatkan konsistensi tampilan teks di berbagai konteks UI.
+== Capaian Kegiatan dan Dampak Implementasi
+Rangkaian kegiatan kerja praktik menunjukkan dampak nyata pada tiga aspek utama. Pertama, pada aspek maintainability, refactoring C\# berbasis data memperbaiki struktur kode dan menurunkan beban perubahan saat penambahan konten. Kedua, pada aspek stabilitas naratif, integrasi serta migrasi Naninovel meningkatkan keandalan routing script, command execution, dan transisi antar-mode permainan. Ketiga, pada aspek kesiapan produk, sistem lokalisasi multibahasa dan modernisasi UI memperkuat konsistensi penyajian teks pada berbagai skenario penggunaan.
 
-Pelaksanaan kerja juga menunjukkan bahwa penguatan engineering workflow (termasuk penyelesaian merge conflict, optimasi repository, dan penataan aset besar) berpengaruh langsung terhadap kelancaran produksi konten. Dengan fondasi teknis yang lebih rapi, proses kreatif dan revisi naratif dapat berlangsung lebih adaptif tanpa mengorbankan kualitas pengalaman pengguna.
+Selain kontribusi fitur, kegiatan juga melibatkan penyelesaian kendala workflow seperti sinkronisasi branch, resolusi konflik merge, penataan aset berukuran besar, dan perapihan konfigurasi repositori. Penguatan proses tersebut berdampak pada kelancaran kolaborasi antartim dan meningkatkan kesiapan proyek untuk tahap pengembangan berikutnya.
 
 = KESIMPULAN DAN SARAN
 
 == Kesimpulan
-Pelaksanaan Kerja Praktik di PT Unimaksima Lentera Nusantara memberikan pengalaman nyata dalam penerapan kompetensi Unity Game Programming pada konteks pengembangan visual novel industri. Kontribusi utama berupa refactoring script C#, integrasi Naninovel, dan penguatan sistem lokalisasi terbukti saling melengkapi dalam membangun pipeline pengembangan yang lebih efisien dan terstruktur.
+Pelaksanaan kerja praktik di PT Unimaksima Lentera Nusantara memberikan pengalaman komprehensif dalam penerapan kompetensi Unity Game Programming pada proyek visual novel industri. Kontribusi utama berupa refactoring arsitektur script C\#, integrasi serta migrasi Naninovel, dan pengembangan sistem lokalisasi multibahasa terbukti saling melengkapi dalam membangun pipeline pengembangan yang lebih terstruktur.
 
-Hasil kegiatan menunjukkan bahwa peningkatan kualitas arsitektur kode tidak hanya berdampak pada aspek teknis internal, tetapi juga mendukung kelancaran kolaborasi tim dan percepatan iterasi konten. Di sisi lain, pengelolaan narasi dan lokalisasi yang sistematis berkontribusi terhadap kesiapan produk untuk menjangkau pengguna lintas bahasa dengan kualitas pengalaman yang tetap terjaga.
+Hasil kegiatan menunjukkan bahwa penguatan fondasi teknis tidak hanya berdampak pada stabilitas sistem internal, tetapi juga mempercepat proses iterasi konten dan meningkatkan kualitas koordinasi tim. Dengan basis kode yang lebih maintainable dan lokalisasi yang lebih sistematis, proyek menjadi lebih siap untuk pengembangan berkelanjutan dan distribusi lintas bahasa.
 
 == Saran
-Bagi instansi, disarankan untuk melanjutkan standardisasi praktik pengembangan, khususnya pada dokumentasi teknis, pedoman penulisan script, dan prosedur validasi lokalisasi agar kualitas implementasi tetap konsisten pada setiap siklus produksi. Penguatan mekanisme code review lintas fungsi juga dapat meningkatkan efektivitas deteksi masalah sejak tahap awal pengembangan.
+Bagi instansi, disarankan untuk melanjutkan standardisasi workflow pengembangan, khususnya pada dokumentasi teknis command, pedoman penulisan script naratif, dan prosedur validasi lokalisasi lintas bahasa. Penguatan praktik code review dan quality gate antarfungsi juga penting untuk menekan risiko regresi pada fase integrasi fitur baru.
 
-Bagi mahasiswa yang akan melaksanakan Kerja Praktik berikutnya, disarankan untuk memperkuat dasar rekayasa perangkat lunak, pemahaman arsitektur Unity, serta sensitivitas terhadap aspek naratif dan lokalisasi sejak sebelum penempatan. Kesiapan tersebut akan membantu mahasiswa beradaptasi lebih cepat dengan ritme kerja industri dan memberikan kontribusi yang lebih terukur terhadap kebutuhan proyek.
+Bagi mahasiswa berikutnya, disarankan untuk mempersiapkan dasar pemrograman C\#, konsep arsitektur Unity, serta pemahaman alur kerja sistem naratif sebelum memasuki masa kerja praktik. Kesiapan tersebut akan membantu proses adaptasi terhadap ritme industri dan memungkinkan kontribusi teknis yang lebih terukur sejak fase awal penugasan.
