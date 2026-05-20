@@ -86,7 +86,7 @@ Secara akademis, pembahasan sejarah perusahaan juga berfungsi menjelaskan hubung
 == Struktur Organisasi PT Unimaksima Lentera Nusantara
 Bagian ini menyajikan kerangka struktur organisasi perusahaan sebagai landasan untuk memahami alur koordinasi kerja dalam proyek pengembangan game. Pembahasan mencakup fungsi manajerial, fungsi kreatif, dan fungsi teknis yang saling terintegrasi pada siklus produksi konten.
 
-Dalam konteks tersebut, posisi Unity Game Programmer berada pada titik pertemuan antara kebutuhan desain naratif dan implementasi perangkat lunak. Oleh karena itu, pemahaman terhadap struktur organisasi penting untuk menjelaskan pola komunikasi, pembagian tanggung jawab, serta mekanisme sinkronisasi pekerjaan yang memengaruhi keberhasilan implementasi teknis selama kerja praktik.
+Dalam konteks tersebut, posisi Unity Game Programmer berada pada titik pertemuan antara kebutuhan desain naratif dan implementasi perangkat lunak. Oleh karena itu, pemahaman terhadap struktur organisasi penting untuk menjelaskan pola komunikasi, pembagian tanggung jawab, serta mekanisme sinkronisasi pekerjaan yang mempengaruhi keberhasilan implementasi teknis selama kerja praktik.
 
 = HASIL KEGIATAN KERJA PRAKTIK
 
@@ -113,7 +113,7 @@ Tahap modernisasi antarmuka dilakukan dengan migrasi menyeluruh dari Legacy Text
 Pada fase lanjutan, sistem lokalisasi dimigrasikan dari duplikasi script terjemahan ke format dokumen teks standar (.txt) Naninovel 2.1. Migrasi ini diikuti penataan ulang scenario root, perbaikan metadata yang korup, serta integrasi lokalisasi pada codex panel agar seluruh elemen UI dapat bertukar bahasa secara konsisten. Dengan demikian, alur kerja translasi menjadi lebih terpusat dan lebih aman dari konflik eksekusi.
 
 == Capaian Kegiatan dan Dampak Implementasi
-Rangkaian kegiatan kerja praktik menunjukkan dampak nyata pada tiga aspek utama. Pertama, pada aspek maintainability, refactoring C# berbasis data memperbaiki struktur kode dan menurunkan beban perubahan saat penambahan konten. Kedua, pada aspek stabilitas naratif, integrasi serta migrasi Naninovel meningkatkan keandalan routing script, command execution, dan transisi antarmode permainan. Ketiga, pada aspek kesiapan produk, sistem lokalisasi multibahasa dan modernisasi UI memperkuat konsistensi penyajian teks pada berbagai skenario penggunaan.
+Rangkaian kegiatan kerja praktik menunjukkan dampak nyata pada tiga aspek utama. Pertama, pada aspek maintainability, refactoring C# berbasis data memperbaiki struktur kode dan menurunkan beban perubahan saat penambahan konten. Kedua, pada aspek stabilitas naratif, integrasi serta migrasi Naninovel meningkatkan keandalan routing script, command execution, dan transisi antar-mode permainan. Ketiga, pada aspek kesiapan produk, sistem lokalisasi multibahasa dan modernisasi UI memperkuat konsistensi penyajian teks pada berbagai skenario penggunaan.
 
 Selain kontribusi fitur, kegiatan juga melibatkan penyelesaian kendala workflow seperti sinkronisasi branch, resolusi konflik merge, penataan aset berukuran besar, dan perapihan konfigurasi repositori. Penguatan proses tersebut berdampak pada kelancaran kolaborasi antartim dan meningkatkan kesiapan proyek untuk tahap pengembangan berikutnya.
 
