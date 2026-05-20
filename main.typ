@@ -85,15 +85,15 @@ Pelaksanaan Kerja Praktik ini diharapkan memberikan manfaat sebagai berikut:
 
 = GAMBARAN UMUM PERUSAHAAN
 
-== Sejarah Singkat Lentera Nusantara
-PT Unimaksima Lentera Nusantara merupakan perusahaan yang bergerak pada pengembangan produk digital kreatif dengan fokus pada game dan pengalaman interaktif berbasis narasi. Dalam konteks penulisan laporan ini, pembahasan sejarah perusahaan disusun untuk menunjukkan keterkaitan antara perkembangan organisasi dan arah pengembangan teknologinya.
+== Sejarah Singkat PT Unimaksima Lentera Nusantara
+PT Unimaksima Lentera Nusantara berkembang sebagai perusahaan kreatif digital yang menempatkan pengembangan game sebagai salah satu fokus utamanya. Perjalanan perusahaan diawali dari inisiatif membangun produk interaktif yang menggabungkan kekuatan cerita dan teknologi, kemudian bertumbuh melalui penguatan tim pengembang, peningkatan kapasitas produksi, serta penyesuaian strategi produk terhadap dinamika pasar industri game.
 
-Kerangka penulisan pada bagian sejarah singkat dapat diawali dengan latar pendirian perusahaan, dilanjutkan dengan fase pertumbuhan produk, penguatan kompetensi tim, serta penentuan posisi perusahaan dalam ekosistem industri kreatif. Melalui susunan tersebut, pembaca memperoleh gambaran mengenai fondasi strategis yang melatarbelakangi kebutuhan perusahaan terhadap optimalisasi proses produksi game, termasuk pada aspek script dan lokalisasi.
+Dalam fase pengembangannya, perusahaan menunjukkan orientasi pada kualitas pipeline produksi, terutama pada pengelolaan konten naratif dan kesiapan teknis produk untuk proses iterasi. Arah ini menjadi landasan penting bagi pelaksanaan Kerja Praktik karena kebutuhan optimalisasi script dan lokalisasi tidak berdiri sendiri, melainkan merupakan bagian dari strategi perusahaan untuk menjaga kualitas dan skalabilitas pengembangan visual novel.
 
-== Struktur Organisasi Lentera Nusantara
-Struktur organisasi Lentera Nusantara disusun untuk mendukung koordinasi lintas fungsi antara tim kreatif, teknis, dan manajerial dalam pengembangan produk game. Pada laporan ini, bagian struktur organisasi difokuskan sebagai kerangka pemahaman peran, tanggung jawab, serta pola komunikasi kerja yang memengaruhi efektivitas implementasi teknis selama Kerja Praktik.
+== Struktur Organisasi PT Unimaksima Lentera Nusantara
+Struktur organisasi PT Unimaksima Lentera Nusantara secara umum tersusun dari fungsi manajerial, fungsi kreatif, dan fungsi teknis yang saling terhubung dalam siklus produksi game. Fungsi manajerial berperan dalam penetapan prioritas proyek dan pengendalian kualitas, fungsi kreatif menangani desain naratif serta pengalaman pemain, sedangkan fungsi teknis memastikan implementasi sistem berjalan stabil dan efisien.
 
-Kerangka penulisan dapat memuat deskripsi unit kerja utama, hubungan koordinatif antardivisi, serta posisi peran Unity Game Programmer di dalam alur produksi. Penyajian tersebut penting untuk menjelaskan bagaimana keputusan teknis terkait refactoring, integrasi middleware naratif, dan lokalisasi bahasa dilakukan secara kolaboratif dengan kebutuhan proyek.
+Pada alur kerja tersebut, peran Unity Game Programmer berada pada simpul koordinasi antara kebutuhan desain dan implementasi perangkat lunak. Posisi ini menuntut kemampuan menerjemahkan kebutuhan naratif ke dalam struktur script yang maintainable, sekaligus menjaga kompatibilitas sistem seperti Naninovel dan modul lokalisasi agar proses produksi konten dapat berlangsung konsisten lintas tim.
 
 = HASIL KEGIATAN KERJA PRAKTIK
 
