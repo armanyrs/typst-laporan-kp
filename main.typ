@@ -25,7 +25,7 @@
 #pagebreak()
 
 #heading(level: 1, numbering: none)[ABSTRAK]
-Industri game global mengalami pertumbuhan yang signifikan seiring meningkatnya adopsi platform digital dan kebutuhan pengguna terhadap pengalaman interaktif yang personal. Pada segmen visual novel, kualitas produk sangat ditentukan oleh kekuatan naratif, kestabilan alur percabangan, serta konsistensi tampilan teks pada berbagai konteks antarmuka. Kondisi tersebut menuntut pengembangan perangkat lunak yang tidak hanya kreatif, tetapi juga terstruktur secara teknis agar proses iterasi konten dapat berlangsung cepat tanpa menurunkan kualitas pengalaman pengguna.
+Industri game global mengalami pertumbuhan yang signifikan seiring meningkatnya adopsi platform digital dan kebutuhan pengguna terhadap pengalaman interaktif yang personal. Pada segmen visual novel, kualitas produk ditentukan oleh kekuatan naratif, kestabilan alur percabangan, dan konsistensi tampilan teks pada antarmuka. Kondisi tersebut menuntut pengembangan perangkat lunak yang tidak hanya kreatif, tetapi juga terstruktur secara teknis agar iterasi konten dapat berlangsung cepat tanpa menurunkan kualitas pengalaman pengguna.
 
 Kerja Praktik ini dilaksanakan di PT Unimaksima Lentera Nusantara dengan peran sebagai Unity Game Programmer pada proyek Visual Novel 101 Forgotten. Ruang lingkup kegiatan mencakup refactoring script C# dari pendekatan hardcoded ke data-driven, integrasi dan migrasi Naninovel hingga versi 2.1, pengembangan sistem lokalisasi multibahasa Indonesia-Jepang, serta modernisasi antarmuka dari Legacy Text ke TextMeshPro. Implementasi teknis juga mencakup perbaikan transisi visual novel ke mode adventure 3D, penataan routing script, dan penguatan fitur codex berbasis command kustom.
 
@@ -52,7 +52,7 @@ Ucapan terima kasih disampaikan kepada pihak perusahaan, dosen pembimbing, serta
 = PENDAHULUAN
 
 == Latar Belakang
-Industri game berkembang sangat pesat dalam beberapa tahun terakhir, ditandai dengan peningkatan jumlah pemain, perluasan kanal distribusi digital, dan pertumbuhan kebutuhan konten interaktif yang semakin beragam. Perkembangan ini mendorong perusahaan pengembang untuk menghasilkan produk yang bukan hanya menarik secara visual, tetapi juga stabil secara teknis dan adaptif terhadap perubahan kebutuhan pengguna.
+Industri game berkembang sangat pesat dalam dekade terakhir, ditandai dengan peningkatan jumlah pemain, perluasan kanal distribusi digital, dan pertumbuhan kebutuhan konten interaktif yang semakin beragam. Perkembangan ini mendorong perusahaan pengembang untuk menghasilkan produk yang bukan hanya menarik secara visual, tetapi juga stabil secara teknis dan adaptif terhadap perubahan kebutuhan pengguna.
 
 Pada konteks tersebut, visual novel menjadi salah satu genre yang menonjol karena menempatkan narasi, percabangan alur, dan kualitas penyajian teks sebagai elemen utama pengalaman bermain. Kompleksitas pengelolaan skenario, dialog, state permainan, dan transisi antarmode menuntut fondasi rekayasa perangkat lunak yang terstruktur. Jika arsitektur script tidak dirancang dengan baik, proses iterasi konten berpotensi lambat, risiko bug meningkat, dan koordinasi lintas tim menjadi kurang efisien.
 
@@ -79,14 +79,14 @@ Berdasarkan kebutuhan tersebut, pelaksanaan kerja praktik di PT Unimaksima Lente
 = GAMBARAN UMUM PERUSAHAAN
 
 == Sejarah Singkat PT Unimaksima Lentera Nusantara
-Bagian ini memaparkan perkembangan PT Unimaksima Lentera Nusantara sebagai perusahaan kreatif digital yang berfokus pada pengembangan produk interaktif, khususnya game berbasis narasi. Uraian sejarah perusahaan disusun untuk memberikan konteks mengenai latar institusi tempat kerja praktik dilaksanakan, termasuk arah pengembangan bisnis, fokus produk, dan karakteristik proses produksi.
+PT Unimaksima Lentera Nusantara berkembang sebagai perusahaan kreatif digital yang menempatkan pengembangan produk interaktif sebagai fokus utama kegiatan bisnis. Dalam konteks kerja praktik ini, perusahaan menunjukkan orientasi pada pengembangan game berbasis narasi yang memadukan kebutuhan desain cerita, pengelolaan aset, dan implementasi teknis dalam satu pipeline produksi.
 
-Secara akademis, pembahasan sejarah perusahaan juga berfungsi menjelaskan hubungan antara kebutuhan industri dan ruang kontribusi mahasiswa selama kerja praktik. Dengan memahami lintasan perkembangan perusahaan, pembaca dapat melihat alasan strategis di balik prioritas teknis seperti refactoring script, manajemen alur narasi, dan lokalisasi multibahasa.
+Seiring pengembangan proyek, kebutuhan perusahaan bergerak pada penguatan skalabilitas proses produksi, terutama pada pengelolaan script, konsistensi antarmuka, dan lokalisasi konten lintas bahasa. Arah tersebut menjadi landasan penting yang menjelaskan mengapa kontribusi kerja praktik difokuskan pada refactoring sistem, integrasi engine naratif, serta standardisasi alur lokalisasi.
 
 == Struktur Organisasi PT Unimaksima Lentera Nusantara
-Bagian ini menyajikan kerangka struktur organisasi perusahaan sebagai landasan untuk memahami alur koordinasi kerja dalam proyek pengembangan game. Pembahasan mencakup fungsi manajerial, fungsi kreatif, dan fungsi teknis yang saling terintegrasi pada siklus produksi konten.
+Struktur organisasi perusahaan pada proyek pengembangan game tersusun atas fungsi manajerial, fungsi kreatif, dan fungsi teknis yang bekerja secara terkoordinasi. Fungsi manajerial berperan dalam perencanaan target dan kontrol kualitas, fungsi kreatif menangani desain naratif serta arah artistik, sedangkan fungsi teknis memastikan implementasi fitur berjalan stabil sesuai kebutuhan produksi.
 
-Dalam konteks tersebut, posisi Unity Game Programmer berada pada titik pertemuan antara kebutuhan desain naratif dan implementasi perangkat lunak. Oleh karena itu, pemahaman terhadap struktur organisasi penting untuk menjelaskan pola komunikasi, pembagian tanggung jawab, serta mekanisme sinkronisasi pekerjaan yang mempengaruhi keberhasilan implementasi teknis selama kerja praktik.
+Pada alur tersebut, posisi Unity Game Programmer berada pada titik integrasi antara kebutuhan desain dan realisasi sistem di engine Unity. Peran ini menuntut komunikasi aktif dengan tim naratif, UI/UX, dan programmer lain agar perubahan konten, routing cerita, serta lokalisasi dapat diimplementasikan konsisten tanpa mengganggu stabilitas build.
 
 = HASIL KEGIATAN KERJA PRAKTIK
 
