@@ -26,7 +26,11 @@
 #pagebreak()
 
 #heading(level: 1, numbering: none)[ABSTRAK]
-Industri game berkembang sangat pesat seiring meningkatnya kebutuhan pasar terhadap pengalaman bermain yang imersif, personal, dan mudah diakses lintas bahasa. Pada ranah visual novel, kualitas pengalaman pengguna sangat dipengaruhi oleh stabilitas alur cerita bercabang, efisiensi eksekusi script, serta konsistensi penyajian dialog pada berbagai konteks antarmuka. Laporan Kerja Praktik ini membahas kontribusi teknis pada pengembangan proyek visual novel di PT Unimaksima Lentera Nusantara melalui peran sebagai Unity Game Programmer. Fokus kegiatan meliputi refactoring kode C# untuk meningkatkan keterbacaan dan maintainability, integrasi Naninovel agar alur naratif lebih terstruktur, serta pengembangan sistem lokalisasi bahasa untuk mendukung distribusi konten kepada audiens yang lebih luas. Hasil implementasi menunjukkan peningkatan pada konsistensi arsitektur script, kemudahan kolaborasi lintas tim, dan kesiapan proyek dalam menghadapi kebutuhan iterasi konten yang cepat. Secara keseluruhan, kegiatan kerja praktik memperlihatkan bahwa optimalisasi teknis pada lapisan script dan lokalisasi berkontribusi langsung terhadap kualitas produk visual novel serta efisiensi proses produksi.
+Industri game berkembang sangat pesat seiring meningkatnya kebutuhan pasar terhadap pengalaman bermain yang imersif, personal, dan mudah diakses lintas bahasa. Pada ranah visual novel, kualitas pengalaman pengguna sangat dipengaruhi oleh stabilitas alur cerita bercabang, efisiensi eksekusi script, serta konsistensi penyajian dialog pada berbagai konteks antarmuka.
+
+Laporan Kerja Praktik ini membahas kontribusi teknis pada pengembangan proyek visual novel di PT Unimaksima Lentera Nusantara melalui peran sebagai Unity Game Programmer. Fokus kegiatan meliputi refactoring kode C# untuk meningkatkan keterbacaan dan maintainability, integrasi Naninovel agar alur naratif lebih terstruktur, serta pengembangan sistem lokalisasi bahasa untuk mendukung distribusi konten kepada audiens yang lebih luas.
+
+Hasil implementasi menunjukkan peningkatan pada konsistensi arsitektur script, kemudahan kolaborasi lintas tim, dan kesiapan proyek dalam menghadapi kebutuhan iterasi konten yang cepat. Secara keseluruhan, kegiatan kerja praktik memperlihatkan bahwa optimalisasi teknis pada lapisan script dan lokalisasi berkontribusi langsung terhadap kualitas produk visual novel serta efisiensi proses produksi.
 
 Kata kunci: Unity, C#, Naninovel, visual novel, lokalisasi bahasa, refactoring.
 
@@ -49,7 +53,9 @@ Semoga laporan ini dapat memberikan manfaat bagi pengembangan kerja sama antara 
 = PENDAHULUAN
 
 == Latar Belakang
-Industri game global menunjukkan pertumbuhan yang konsisten, didorong oleh peningkatan adopsi perangkat digital, perkembangan model bisnis distribusi daring, serta kebutuhan konten interaktif yang semakin beragam. Di dalam ekosistem tersebut, visual novel menjadi salah satu bentuk karya yang menekankan kekuatan narasi, percabangan alur, dan kedalaman interaksi pengguna. Karakteristik ini menuntut proses pengembangan yang tidak hanya kreatif, tetapi juga terstruktur secara teknis agar pengalaman bermain tetap stabil pada setiap skenario cerita.
+Industri game global menunjukkan pertumbuhan yang konsisten, didorong oleh peningkatan adopsi perangkat digital, perkembangan model bisnis distribusi daring, serta kebutuhan konten interaktif yang semakin beragam.
+
+Di dalam ekosistem tersebut, visual novel menjadi salah satu bentuk karya yang menekankan kekuatan narasi, percabangan alur, dan kedalaman interaksi pengguna. Karakteristik ini menuntut proses pengembangan yang tidak hanya kreatif, tetapi juga terstruktur secara teknis agar pengalaman bermain tetap stabil pada setiap skenario cerita.
 
 Dalam pengembangan visual novel berbasis Unity, kualitas implementasi script berpengaruh langsung pada performa, kemudahan pemeliharaan, dan kecepatan iterasi konten. Ketika struktur kode tidak konsisten, tim akan menghadapi hambatan pada proses debugging, pengembangan fitur baru, dan sinkronisasi antaranggota. Oleh sebab itu, refactoring dan standardisasi script C# menjadi langkah penting untuk menjaga keberlanjutan proyek, terutama pada fase pengembangan yang melibatkan perubahan kebutuhan secara dinamis.
 
@@ -92,7 +98,9 @@ Kerangka penulisan dapat memuat deskripsi unit kerja utama, hubungan koordinatif
 = HASIL KEGIATAN KERJA PRAKTIK
 
 == Lingkup Kegiatan dan Peran Teknis
-Selama pelaksanaan Kerja Praktik, penulis ditempatkan pada pengembangan proyek visual novel dengan tanggung jawab utama pada pengelolaan script Unity dan dukungan integrasi sistem naratif. Aktivitas teknis tidak dilakukan sebagai rangkaian pekerjaan harian yang terpisah, melainkan sebagai proses berkelanjutan untuk memperkuat kualitas fondasi proyek agar mampu menampung pertumbuhan konten cerita secara sistematis.
+Selama pelaksanaan Kerja Praktik, penulis ditempatkan pada pengembangan proyek visual novel dengan tanggung jawab utama pada pengelolaan script Unity dan dukungan integrasi sistem naratif.
+
+Aktivitas teknis tidak dilakukan sebagai rangkaian pekerjaan harian yang terpisah, melainkan sebagai proses berkelanjutan untuk memperkuat kualitas fondasi proyek agar mampu menampung pertumbuhan konten cerita secara sistematis.
 
 Pendekatan kerja dimulai dari identifikasi bottleneck pada struktur kode dan alur pemrosesan narasi. Hasil identifikasi tersebut kemudian diterjemahkan ke dalam prioritas perbaikan yang menitikberatkan pada keterbacaan kode, pemisahan tanggung jawab modul, dan kestabilan interaksi antarsistem. Dengan pendekatan ini, kontribusi teknis yang diberikan memiliki dampak langsung pada efisiensi produksi dan kesiapan proyek untuk tahap pengembangan berikutnya.
 
