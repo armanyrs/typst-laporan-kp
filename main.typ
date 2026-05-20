@@ -32,7 +32,7 @@ Laporan Kerja Praktik ini membahas kontribusi teknis pada pengembangan proyek vi
 
 Hasil implementasi menunjukkan peningkatan pada konsistensi arsitektur script, kemudahan kolaborasi lintas tim, dan kesiapan proyek dalam menghadapi kebutuhan iterasi konten yang cepat. Secara keseluruhan, kegiatan kerja praktik memperlihatkan bahwa optimalisasi teknis pada lapisan script dan lokalisasi berkontribusi langsung terhadap kualitas produk visual novel serta efisiensi proses produksi.
 
-Kata kunci: Unity, C#, Naninovel, novel visual, lokalisasi bahasa, pemfaktoran ulang.
+Kata kunci: Unity, C#, Naninovel, _visual novel_, lokalisasi bahasa, pemfaktoran ulang.
 
 #heading(level: 1, numbering: none)[KATA PENGANTAR]
 Puji syukur ke hadirat Allah SWT atas rahmat dan karunia-Nya sehingga laporan Kerja Praktik ini dapat diselesaikan dengan baik. Laporan ini disusun sebagai bentuk pertanggungjawaban akademis atas pelaksanaan Kerja Praktik pada PT Unimaksima Lentera Nusantara, sekaligus sebagai sarana refleksi atas proses pembelajaran yang diperoleh melalui penerapan langsung kompetensi rekayasa perangkat lunak game di lingkungan industri.
